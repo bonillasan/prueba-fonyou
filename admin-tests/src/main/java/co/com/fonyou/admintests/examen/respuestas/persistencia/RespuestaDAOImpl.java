@@ -35,26 +35,30 @@ public class RespuestaDAOImpl implements RespuestaDAO{
 
 	@Override
 	public Boolean guardar(RespuestasDTO request) {
-		String tsql = "INSERT INTO `prueba`.`respuesta`\r\n"
-				+ "(`descripcion`,\r\n"
-				+ "`idPregunta`)\r\n"
-				+ "VALUES\r\n"
-				+ "('"+request.getDescripcion()+"',\r\n"
-				+ "'"+request.getIdPregunta()+"');";
-		int result = jdbcTemplate.update(tsql);
+		StringBuilder tsql = new StringBuilder("Insert into respuesta Values(null,'");
+		tsql.append(request.getDescripcion()+"',");
+		tsql.append(request.getEstado()+",");
+		tsql.append(request.getIdPregunta()+")");		
+		int result = jdbcTemplate.update(tsql.toString());
 		return result > 0;
 	}
 
 	@Override
 	public Boolean actualizar(RespuestasDTO request) {
-		// TODO Auto-generated method stub
-		return null;
+		StringBuilder tsql= new StringBuilder("UPDATE preguntas SET ");
+		tsql.append("descripcion = '");
+		tsql.append(request.getDescripcion()+"',");	
+		tsql.append(" WHERE `idRespuesta` = '");
+		tsql.append(request.getIdRespuesta()+"'");		
+		int result = jdbcTemplate.update(tsql.toString());
+		return result > 0;
 	}
 
 	@Override
 	public Boolean eliminar(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		String tsql="DELETE FROM preguntas WHERE idRespuesta = "+id;
+		int result = jdbcTemplate.update(tsql);
+		return result>0;
 	}
 
 	@Override

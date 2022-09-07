@@ -12,7 +12,7 @@ public interface PreguntasDAO {
 
 	Boolean guardar(PreguntasDTO request);
 
-	Boolean actualizar(UsuarioDTO request);
+	Boolean actualizar(PreguntasDTO request);
 
 	Boolean eliminar(Integer id);
 	

@@ -8,11 +8,9 @@ import co.com.fonyou.admintests.student.dto.UsuarioDTO;
 
 public interface PreguntasService {
 
-	List<UsuarioDTO> consultarEstudiantes();
-
 	Boolean guardar(PreguntasDTO request);
 
-	Boolean actualizar(UsuarioDTO request);
+	Boolean actualizar(PreguntasDTO request);
 
 	Boolean eliminar(Integer id);
 	

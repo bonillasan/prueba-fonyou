@@ -21,11 +21,6 @@ public class PreguntasServiceImpl implements PreguntasService{
 	@Autowired 
 	private RespuestasService respuestasService;
 	
-	@Override
-	public List<UsuarioDTO> consultarEstudiantes() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public Boolean guardar(PreguntasDTO request) {
@@ -34,15 +29,14 @@ public class PreguntasServiceImpl implements PreguntasService{
 	}
 
 	@Override
-	public Boolean actualizar(UsuarioDTO request) {
-		// TODO Auto-generated method stub
-		return null;
+	public Boolean actualizar(PreguntasDTO request) {
+		return preguntasDAO.actualizar(request);
 	}
 
 	@Override
 	public Boolean eliminar(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		preguntasDAO.eliminar(id);
+		return true;
 	}
 
 	@Override
