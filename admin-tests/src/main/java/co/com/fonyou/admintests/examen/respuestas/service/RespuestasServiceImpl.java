@@ -39,4 +39,10 @@ public class RespuestasServiceImpl implements RespuestasService{
 		return null;
 	}
 
+	@Override
+	public List<RespuestasDTO> buscarRespuestaXIdPreg(Long idPreg) {
+		// TODO Auto-generated method stub
+		return respuestaDAO.BuscarRespuestaXPregunta(idPreg);
+	}
+
 }

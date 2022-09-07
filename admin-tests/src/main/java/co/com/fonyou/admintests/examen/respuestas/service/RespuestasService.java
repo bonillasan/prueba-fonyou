@@ -15,4 +15,6 @@ public interface RespuestasService {
 	Boolean actualizar(UsuarioDTO request);
 
 	Boolean eliminar(Integer id);
+	
+	List<RespuestasDTO> buscarRespuestaXIdPreg(Long idPreg);
 }

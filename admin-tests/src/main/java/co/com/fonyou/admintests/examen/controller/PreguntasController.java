@@ -17,13 +17,17 @@ import org.springframework.web.bind.annotation.RestController;
 import co.com.fonyou.admintests.examen.dto.PreguntasDTO;
 import co.com.fonyou.admintests.examen.preguntas.service.PreguntasService;
 import co.com.fonyou.admintests.student.dto.UsuarioDTO;
+import co.com.fonyou.admintests.student.service.StudentService;
 
 @RestController
 @RequestMapping("/api-ms-fonyou/preguntas")
 public class PreguntasController {
 	
 	@Autowired
-	PreguntasService preguntasService;
+	private PreguntasService preguntasService;
+	
+	@Autowired
+	private StudentService studentService;
 
 	@GetMapping(value="/consultar-estudiantes-id")
 	public ResponseEntity<UsuarioDTO> consultar(@RequestParam Integer id) throws Exception{

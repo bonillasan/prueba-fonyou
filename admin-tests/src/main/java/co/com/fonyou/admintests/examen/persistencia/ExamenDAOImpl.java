@@ -29,14 +29,7 @@ public class ExamenDAOImpl implements ExamenDAO{
 
 	@Override
 	public Boolean guardar(ExamenDTO examen) {
-		String tsql = "INSERT INTO `prueba`.`examen`\r\n"
-				+ "(`nombre`,\r\n"
-				+ "`edad`,\r\n"
-				+ "`ciudad`)\r\n"
-				+ "VALUES\r\n"
-				+ "('"+examen.get)+"',\r\n"
-				+ "'"+examen.getEdad()+"',\r\n"
-				+ "'"+examen.getCiudad()+"');";
+		String tsql = "";
 		int result = jdbcTemplate.update(tsql);
 		return result > 0;
 	}
