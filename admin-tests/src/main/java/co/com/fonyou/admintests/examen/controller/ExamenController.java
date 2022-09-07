@@ -19,8 +19,8 @@ public class ExamenController {
 	ExamenService examenService;
 	
 	@PostMapping(value="/guardar")
-	public ResponseEntity<Boolean> guardar(@RequestBody ExamenDTO request){
-		Boolean response = examenService.guardar(request);
+	public ResponseEntity<ExamenDTO> guardar(@RequestBody ExamenDTO request){
+		ExamenDTO response = examenService.guardar(request);
 		return new ResponseEntity<>(response, HttpStatus.OK);
 	}
 
